@@ -26,7 +26,7 @@ library(socviz)
 ## Mappings link data to things you see
 
 ```{r 03-make-a-plot-2}
-gapminder
+data = gapminder
 ```
 
 
@@ -129,7 +129,7 @@ p <- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap,
                           y = lifeExp)) 
 p + geom_point(alpha = 0.3) +
-    geom_smooth(color = "orange", se = FALSE, size = 8, method = "lm") +
+    geom_smooth(color = "orange", se = FALSE, size = 2, method = "lm") +
     scale_x_log10()
 ```
 
