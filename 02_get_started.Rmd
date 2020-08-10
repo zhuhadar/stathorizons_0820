@@ -1,11 +1,8 @@
 ---
 title: "Get Started"
-author: "Kieran Healy"
-used by: "Lily Popova Zhuhadar"
+author: "Book: A PRACTICAL INTRODUCTION, Kieran Healy, Published by Princeton University Press, modified by Lily Popova Zhuhadar"
 date: "10-August-2020"
 output: html_document
-editor_options: 
-  chunk_output_type: console
 ---
 
 ## Load Libraries
@@ -81,21 +78,6 @@ my_summary <- summary(my_numbers)
 ```{r 02-get-started-8}
 my_summary
 ```
-
-
-### Functions are bundled into thematic packages, which you load with the `library()` command
-
-Datasets can also be bundled into packages. Here we load the `drat` library to allow us to install two data packages: [covdata](https://kjhealy.github.io/covdata) and [nycdogs](https://kjhealy.github.io/nycdogs).
-
-```{r libraries}
-library(drat)
-addRepo("kjhealy")
-
-install.packages(c("covdata", "nycdogs"))
-
-```
-
-You only have to _install_ a package once, or whenever it is updated. But if you want to make use of it,  you must _load_ it (with `library()`) at the start of your R session. You can do this in the first chunk of your RMarkdown file, for example.
 
 
 ```{r output}
