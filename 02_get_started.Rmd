@@ -196,7 +196,7 @@ gapminder
 ```
 
 
-```{r first_plot, fig.height=6, fig.width=10, fig.cap="Life expectancy plotted against GDP per capita for a large number of country-years."}
+```{r first_plot}
 
 p <- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap, y = lifeExp))
