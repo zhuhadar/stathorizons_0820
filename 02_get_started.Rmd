@@ -113,10 +113,12 @@ class(my_new_vector)
 ```{r titanic1}
 titanic
 class(titanic)
+temp <- titanic
+
 ```
 
 ```{r titanic2}
-titanic$percent
+temp$percent
 ```
 
 
