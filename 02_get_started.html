@@ -437,7 +437,8 @@ my_new_vector</code></pre>
 ## 4 survived female  344    15.6</code></pre>
 <pre class="r"><code>class(titanic)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<pre class="r"><code>titanic$percent</code></pre>
+<pre class="r"><code>temp &lt;- titanic</code></pre>
+<pre class="r"><code>temp$percent</code></pre>
 <pre><code>## [1] 62.0  5.7 16.7 15.6</code></pre>
 <pre class="r"><code>titanic_tb &lt;- as_tibble(titanic)
 titanic_tb</code></pre>
@@ -512,21 +513,7 @@ organs &lt;- read_csv(file = url)</code></pre>
 </div>
 <div id="make-your-first-figure" class="section level2">
 <h2>Make your first figure</h2>
-<pre class="r"><code>gapminder</code></pre>
-<pre><code>## # A tibble: 1,704 x 6
-##    country     continent  year lifeExp      pop gdpPercap
-##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
-##  1 Afghanistan Asia       1952    28.8  8425333      779.
-##  2 Afghanistan Asia       1957    30.3  9240934      821.
-##  3 Afghanistan Asia       1962    32.0 10267083      853.
-##  4 Afghanistan Asia       1967    34.0 11537966      836.
-##  5 Afghanistan Asia       1972    36.1 13079460      740.
-##  6 Afghanistan Asia       1977    38.4 14880372      786.
-##  7 Afghanistan Asia       1982    39.9 12881816      978.
-##  8 Afghanistan Asia       1987    40.8 13867957      852.
-##  9 Afghanistan Asia       1992    41.7 16317921      649.
-## 10 Afghanistan Asia       1997    41.8 22227415      635.
-## # … with 1,694 more rows</code></pre>
+<pre class="r"><code>gapminder &lt;- gapminder</code></pre>
 <pre class="r"><code>p &lt;- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point() + 
