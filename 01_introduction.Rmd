@@ -1,5 +1,6 @@
 ---
 title: "Data Visualization"
+author: " K.J. Healy
 output: html_document
 ---
 
