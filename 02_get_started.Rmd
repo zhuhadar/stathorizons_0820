@@ -161,7 +161,8 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 and not this:
 
 ```{r 02-get-started-11, echo=TRUE, eval=FALSE}
-ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
+ggplot(data = mpg, aes(x = displ, y = hwy)) 
++ geom_point()
 ```
 
 
@@ -199,6 +200,7 @@ gapminder
 p <- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point() + 
+  geom_smooth()
   geom_smooth(mapping = aes(color = continent, fill = continent)) + 
   scale_x_log10(labels = scales::dollar)
 
