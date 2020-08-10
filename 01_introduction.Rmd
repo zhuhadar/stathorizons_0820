@@ -1,6 +1,6 @@
 ---
 title: "Data Visualization"
-author: " K.J. Healy
+author: " K.J. Healy"
 output: html_document
 ---
 
@@ -38,7 +38,7 @@ Here, the braces at the start of the code chunk have some additional options set
 
 If you have not installed these required libraries yet, make sure you have an internet connection and install them now.
 
-```{r 01-introduction-2, eval = FALSE, echo = TRUE}
+```{r 01-introduction, eval = TRUE, echo = FALSE}
 ## To install these packages, change eval = FALSE to eval = TRUE 
 ## in the line above. You only need to do this once. Alternatively, 
 ## copy the code below and paste it into the Console window.
@@ -50,15 +50,16 @@ my_packages <- c("tidyverse", "broom", "coefplot", "drat",
                  "socviz", "survey", "srvyr", "viridis", "viridisLite", 
                  "devtools")
 
-install.packages(my_packages, repos = "http://cran.rstudio.com"
+install.packages(my_packages, repos = "http://cran.rstudio.com")
 
 ```
-### Functions are bundled into thematic packages, which you load with the `library()` command
+### Functions are bundled into thematic packages, which you load with the ### `library()` command
 
 Datasets can also be bundled into packages. Here we load the `drat` library to allow us to install data packages, such as: 
 [covdata](https://kjhealy.github.io/covdata) and [nycdogs](https://kjhealy.github.io/nycdogs).
 
-```{r libraries}
+```{r libraries, echo = FALSE}
+
 library(drat)
 addRepo("kjhealy")
 
