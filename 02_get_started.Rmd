@@ -14,6 +14,7 @@ library(gapminder)
 library(here)
 library(tidyverse)
 library(socviz)
+library(ggplot2)
 ```
 
 A code chunk:
@@ -154,16 +155,14 @@ Here are three very specific things to watch out for:
 
 
 ```{r 02-get-started-10, echo=TRUE, eval=FALSE}
-ggplot(data = mpg, aes(x = displ, y = hwy)) +
-    geom_point()
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 ```
 
 
 and not this:
 
 ```{r 02-get-started-11, echo=TRUE, eval=FALSE}
-ggplot(data = mpg, aes(x = displ, y = hwy))
-+ geom_point()
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 ```
 
 
