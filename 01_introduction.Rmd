@@ -50,11 +50,22 @@ my_packages <- c("tidyverse", "broom", "coefplot", "drat",
                  "socviz", "survey", "srvyr", "viridis", "viridisLite", 
                  "devtools")
 
-install.packages(my_packages, repos = "http://cran.rstudio.com")
+install.packages(my_packages, repos = "http://cran.rstudio.com"
+
+```
+### Functions are bundled into thematic packages, which you load with the `library()` command
+
+Datasets can also be bundled into packages. Here we load the `drat` library to allow us to install data packages, such as: 
+[covdata](https://kjhealy.github.io/covdata) and [nycdogs](https://kjhealy.github.io/nycdogs).
+
+```{r libraries}
+library(drat)
+addRepo("kjhealy")
 
 data_packages <- c("covdata", "congress", "kjhnet", "nycdogs")
 
 drat::addRepo("kjhealy")
+
 install.packages(data_packages)
 
 ```

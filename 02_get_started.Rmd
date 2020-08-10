@@ -4,6 +4,8 @@ author: "Kieran Healy"
 used by: "Lily Popova Zhuhadar"
 date: "10-August-2020"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Load Libraries
