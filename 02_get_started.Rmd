@@ -1,7 +1,8 @@
 ---
 title: "Get Started"
 author: "Kieran Healy"
-date: "10-January-2020"
+used by: "Lily Popova Zhuhadar"
+date: "10-JAugust-2020"
 output: html_document
 ---
 
