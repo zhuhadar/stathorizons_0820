@@ -1,5 +1,6 @@
 ---
 title: "Data Visualization"
+author: "Book: A PRACTICAL INTRODUCTION, Kieran Healy, Published by Princeton University Press"
 date: "10-August-2020"
 output: html_document
 ---
