@@ -467,8 +467,7 @@ titanic_tb</code></pre>
 <li>Make sure you complete your expressions. If you think you have completed typing your code, but instead of seeing the <code>&gt;</code> command prompt at the console you see the <code>+</code> character instead, that may mean R thinks you haven’t written a complete expression yet. You can hit <code>Esc</code> or <code>Ctrl-C</code> to force your way back to the console and try typing your code again.</li>
 <li>In ggplot specifically, as you will see, we will build up plots a piece at a time by adding expressions to one another. When doing this, make sure your <code>+</code> character goes at the end of the line, and not the beginning. That is, write this:</li>
 </ul>
-<pre class="r"><code>mpg
-ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()</code></pre>
+<pre class="r"><code>ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()</code></pre>
 <p>and not this:</p>
 <pre class="r"><code>ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()</code></pre>
 </div>
