@@ -1,0 +1,145 @@
+---
+title: "Data Visualization - Day-1 Exercises"
+author: "Book: A PRACTICAL INTRODUCTION, Kieran Healy, Published by Princeton University Press"
+date: "10-August-2020"
+output: html_document
+---
+
+## Overview
+
+In these exercises, you will use R, RStudio, and ggplot to look at the gapminder data again. Our goal is to create an RStudio project, load the required libraries, and begin looking at our data.
+
+## 1- Set Up a Project
+
+    1. Create a new RStudio project and place it on your computer somewhere. Call it something like “Exercises”
+
+    2. Open that new folder in Windows File Explorer or macOS Finder (however you navigate around the files on your         computer), and create a folder there named figures
+
+    3. Create a new R Markdown file and save it in your project.
+
+    4. In RStudio go to File > New File > R Markdown…, choose the default options, and delete all the placeholder        text in the new file except for the metadata at the top, which is between --- and ---.
+
+    5. Verify that your project folder is structured like this:
+    
+        your-project-name/
+        your-analysis.Rmd
+        your-project-name.Rproj
+        figures/
+         <EMPTY>
+    
+## 2- Get the data
+
+    Load the libraries required for the analysis. Create an R code chunk that runs this code:
+
+        library(tidyverse)
+        library(gapminder)
+        library(socviz)
+
+## 3- Examine the Gapminder Data
+
+    gapminder
+
+    Create the following plots (Make a new code chunk for each plot)
+    1.	A scatter plot (using geom_point()) of GDP per Capita (on the x-axis) and Life Expectancy (on the y-axis).
+    2.	Adjust the plot so that the x-axis scale is in log units rather than raw GDP, and properly label the axes.
+    3.	Using subset() function, choose a single year and make a histogram of country populations. Hint: Use == and not = when asking subset to pick a particular value of year.
+    4.	Try adding a log scale to the y-axis. Does that seem useful?
+    
+    
+## 4-  Further Questions and Topics
+    
+    1. What happens when you put the geom_smooth() function before geom_point() instead of after it?
+    2. Plot life expectancy against population rather than per capita GDP. What does that look like?
+    3. Try some alternative scale mappings beyond scale_x_log10(), such as scale_x_sqrt() and scale_x_reverse(). 
+    4. There are corresponding functions for y-axis transformations.
+    5. What happens if you map color to year instead of continent? Is the result what you expected?
+    6. Is the example figure we worked up and polished during class really the best way to display the country-year         data in gapminder? How might we do better?
+
+## 5- Produce your answers as an HTML, PDF, or Word document
+
+    1. Once you’ve written your code, knit your document.
+
+
+## Load Libraries
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(gapminder)
+library(here)
+library(tidyverse)
+library(socviz)
+```
+
+## Mappings link data to things you see
+
+```{r 01-ecercises-1}
+data = gapminder
+```
+
+
+```{r 01-ecercises-2, fig.cap='A more polished plot of Life Expectancy vs GDP.', fig.width=8, fig.height=5.25, layout = 'l-page'}
+
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp))
+p + geom_point()
+```
+
+
+```{r}
+
+sub_data <- subset(data, year ==2007)
+p2 <- ggplot(data = sub_data, mapping = aes(x = pop)) + 
+    geom_histogram(mapping = NULL, data = NULL, stat = "bin",position = "stack", binwidth = NULL, bins = NULL, 
+                   na.rm = FALSE,orientation = NA, show.legend = NA, inherit.aes = TRUE)
+p2
+```
+
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp))
+p + geom_point(alpha = 0.3) + geom_smooth(method = "gam") +
+    scale_x_sqrt(labels = scales::dollar) +
+    labs(x = "GDP Per Capita", y = "Life Expectancy in Years",
+         title = "Economic Growth and Life Expectancy",
+         subtitle = "Data points are country-years",
+         caption = "Source: Gapminder.")
+```
+
+
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp, color = year))
+p + geom_point(alpha = 0.3) + geom_smooth(method = "gam") +
+    scale_x_sqrt(labels = scales::dollar) +
+    labs(x = "GDP Per Capita", y = "Life Expectancy in Years",
+         title = "Economic Growth and Life Expectancy",
+         subtitle = "Data points are country-years",
+         caption = "Source: Gapminder.")
+```
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp, color = year))
+p + geom_point(alpha = 0.3) + geom_smooth(method = "gam") +
+    scale_x_reverse(labels = scales::dollar) +
+    labs(x = "GDP Per Capita", y = "Life Expectancy in Years",
+         title = "Economic Growth and Life Expectancy",
+         subtitle = "Data points are country-years",
+         caption = "Source: Gapminder.")
+```
+
+
+
+```{r}
+
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp, color = year))
+p + geom_point() + scale_color_gradient(low ="blue", high="yellow") +
+      scale_x_log10() + theme_minimal()
+```
+
+
+```{r}
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp, color = factor(year)))
+p + geom_point() + theme_minimal()
+```
+
+
