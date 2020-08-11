@@ -42,7 +42,9 @@ In these exercises, you will use R, RStudio, and ggplot to look at the gapminder
     Create the following plots (Make a new code chunk for each plot)
     1.	A scatter plot (using geom_point()) of GDP per Capita (on the x-axis) and Life Expectancy (on the y-axis).
     2.	Adjust the plot so that the x-axis scale is in log units rather than raw GDP, and properly label the axes.
-    3.	Using subset() function, choose a single year and make a histogram of country populations. Hint: Use == and not = when asking subset to pick a particular value of year.
+    3.	Using subset() function, choose a single year and make a histogram of country populations. 
+    
+    Hint: Use == and not = when asking subset to pick a particular value of year.
     4.	Try adding a log scale to the y-axis. Does that seem useful?
     
     
@@ -57,7 +59,7 @@ In these exercises, you will use R, RStudio, and ggplot to look at the gapminder
 
 ## 5- Produce your answers as an HTML, PDF, or Word document
 
-    1. Once you’ve written your code, knit your document.
+    Once you’ve written your code, knit your document.
 
 
 ## Load Libraries
