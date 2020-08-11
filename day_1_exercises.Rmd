@@ -1,6 +1,6 @@
 ---
 title: "Data Visualization - Day-1 Exercises"
-author: "Book: A PRACTICAL INTRODUCTION, Kieran Healy, Published by Princeton University Press"
+author: "Book: A PRACTICAL INTRODUCTION, Kieran Healy, Published by Princeton University Press, used by Lily Popova Zhuhadar"
 date: "10-August-2020"
 output: html_document
 ---
