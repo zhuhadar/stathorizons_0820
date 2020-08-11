@@ -87,15 +87,6 @@ p + geom_point()
 ```
 
 
-```{r}
-
-sub_data <- subset(data, year ==2007)
-p2 <- ggplot(data = sub_data, mapping = aes(x = pop)) + 
-    geom_histogram(mapping = NULL, data = NULL, stat = "bin",position = "stack", binwidth = NULL, bins = NULL, 
-                   na.rm = FALSE,orientation = NA, show.legend = NA, inherit.aes = TRUE)
-p2
-```
-
 
 ```{r}
 p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp))
